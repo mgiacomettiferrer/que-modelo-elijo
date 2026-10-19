@@ -13,5 +13,5 @@ data/raw/
 data/interim/aa_page_*.txt
 data/interim/vals_raw_*.json
 
-# Documento técnico en PDF: en edición, no se publica todavía.
-outputs/article/*.pdf
+# Documento técnico (Markdown y PDF): en edición, no se publica todavía.
+outputs/article/

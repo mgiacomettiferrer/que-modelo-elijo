@@ -1,9 +1,8 @@
 # ¿Qué modelo elijo para mi agente?
 
-Análisis de 24 modelos de lenguaje de 16 proveedores según capacidad, velocidad y precio, con datos de [Artificial Analysis](https://artificialanalysis.ai/models) al 2026-10-19. Incluye una herramienta web interactiva y un documento técnico.
+Análisis de 24 modelos de lenguaje de 16 proveedores según capacidad, velocidad y precio, con datos de [Artificial Analysis](https://artificialanalysis.ai/models) al 2026-10-19. Incluye una herramienta web interactiva. El documento técnico está en edición y se publicará más adelante.
 
 - **Herramienta web:** [mauriciogiacometti.com/portfolio/que-modelo-elijo](https://mauriciogiacometti.com/portfolio/que-modelo-elijo/) ([English](https://mauriciogiacometti.com/en/portfolio/que-modelo-elijo/))
-- **Documento técnico:** [outputs/article/que-modelo-elijo-para-mi-agente.md](outputs/article/que-modelo-elijo-para-mi-agente.md)
 - **Especificación de datos y modelado:** [outputs/especificacion-datos-y-modelado.md](outputs/especificacion-datos-y-modelado.md)
 
 ## Qué encontramos
@@ -20,7 +19,7 @@ Análisis de 24 modelos de lenguaje de 16 proveedores según capacidad, velocida
 - **Un solo host**: los puntajes no son comparables con los de otros leaderboards.
 - **K2 Horizon** tiene precio imputado (mínimo del dataset) y no se comercializa.
 
-El detalle está en la sección 6 del documento técnico.
+El detalle está en la sección 9 de la especificación.
 
 ## Estructura
 
@@ -29,7 +28,6 @@ src/                     scripts del pipeline, uno por etapa
 data/interim/            intermedios regenerables (reportes, tablas)
 data/processed/          parquet finales; aa_models_priced_2026-10-19.parquet es la tabla de la web
 data/web/models.json     datos que consume la web
-outputs/article/         documento técnico (Markdown)
 outputs/figures/         figuras generadas por código
 outputs/web/que-modelo-elijo/   la web: estática, se abre con index.html (ES) o en/index.html (EN)
 ```
@@ -45,7 +43,6 @@ python -m src.aa_pca --exclude latency_ttft_s_z --exclude data_z --out data/proc
 python -m src.aa_cluster_k4
 python -m src.impute_k2_price --apply-min
 python -m src.web_export
-python -m src.article_pdf        # requiere Chrome o Edge
 ```
 
 `data/raw/` no está en el repo: contiene el payload descargado de la página de Artificial Analysis y no se redistribuye. La extracción se hizo a mano desde el navegador, así que para reproducir desde cero hay que obtener ese payload de nuevo. Los parquet de `data/processed/` permiten regenerar la web y las figuras sin él.
