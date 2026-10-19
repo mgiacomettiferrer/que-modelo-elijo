@@ -5,7 +5,7 @@ Pasos:
    para que el PDF no dependa de rutas relativas).
 2. HTML -> PDF con Chrome o Edge en modo headless (`--print-to-pdf`).
 
-El PDF queda dentro de la carpeta de la web para publicarse con ella.
+El PDF queda junto al artículo y no se publica con la web: está en edición.
 
 Uso:
     python -m src.article_pdf
@@ -25,7 +25,7 @@ from pathlib import Path
 import markdown
 
 ARTICLE = Path("outputs/article/que-modelo-elijo-para-mi-agente.md")
-OUT = Path("outputs/web/que-modelo-elijo/docs/que-modelo-elijo-para-mi-agente.pdf")
+OUT = Path("outputs/article/que-modelo-elijo-para-mi-agente.pdf")
 
 CANDIDATES = [
     r"C:\Program Files\Google\Chrome\Application\chrome.exe",

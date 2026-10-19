@@ -12,3 +12,6 @@ data/raw/
 # Captura de página del leaderboard: es contenido crudo de la fuente.
 data/interim/aa_page_*.txt
 data/interim/vals_raw_*.json
+
+# Documento técnico en PDF: en edición, no se publica todavía.
+outputs/article/*.pdf

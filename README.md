@@ -3,7 +3,7 @@
 Análisis de 24 modelos de lenguaje de 16 proveedores según capacidad, velocidad y precio, con datos de [Artificial Analysis](https://artificialanalysis.ai/models) al 2026-10-19. Incluye una herramienta web interactiva y un documento técnico.
 
 - **Herramienta web:** [mauriciogiacometti.com/portfolio/que-modelo-elijo](https://mauriciogiacometti.com/portfolio/que-modelo-elijo/) ([English](https://mauriciogiacometti.com/en/portfolio/que-modelo-elijo/))
-- **Documento técnico:** [outputs/article/que-modelo-elijo-para-mi-agente.md](outputs/article/que-modelo-elijo-para-mi-agente.md) (también en PDF dentro de la web)
+- **Documento técnico:** [outputs/article/que-modelo-elijo-para-mi-agente.md](outputs/article/que-modelo-elijo-para-mi-agente.md)
 - **Especificación de datos y modelado:** [outputs/especificacion-datos-y-modelado.md](outputs/especificacion-datos-y-modelado.md)
 
 ## Qué encontramos

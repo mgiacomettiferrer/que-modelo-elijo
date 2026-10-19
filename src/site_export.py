@@ -2,8 +2,8 @@
 
 Toma las páginas sueltas de `outputs/web/que-modelo-elijo/` (ES en `index.html`,
 EN en `en/index.html`), extrae su `<main>` y lo envuelve con el header, el footer,
-la analítica y las fuentes del sitio. Copia los assets compartidos (JS, CSS, datos,
-D3 local y el PDF) a `public/portfolio/que-modelo-elijo/`.
+la analítica y las fuentes del sitio. Copia los assets compartidos (JS, CSS, datos y
+D3 local) a `public/portfolio/que-modelo-elijo/`.
 
 El sitio sirve una CSP con `script-src 'self'`: por eso D3 va copiado al propio
 sitio y las páginas no tienen scripts ni estilos inline.
@@ -29,7 +29,6 @@ ASSETS = [
     "styles.css",
     "data/models.js",
     "vendor/d3.min.js",
-    "docs/que-modelo-elijo-para-mi-agente.pdf",
 ]
 
 PAGES = {
@@ -87,11 +86,11 @@ def extract_main(html: str) -> tuple[str, str]:
 
 
 def adapt_body(body: str, cfg: dict) -> str:
-    # Rutas relativas de la página suelta -> absolutas en el sitio.
-    body = re.sub(r'href="(?:\.\./)?docs/', f'href="{BASE}docs/', body)
     # Título con el acento tipográfico del sitio (segunda línea en serif itálica).
     first, second = cfg["h1"]
     body = re.sub(r'<h1 id="l1-title">.*?</h1>', f'<h1 id="l1-title">{first}<br><em>{second}</em></h1>', body, count=1, flags=re.S)
+    if ".pdf" in body:
+        raise SystemExit("La página enlaza un PDF: el documento técnico todavía no se publica.")
     if "style=" in body or "onsubmit" in body or "onclick" in body:
         raise SystemExit("La página tiene estilos o handlers inline: la CSP del sitio los bloquea.")
     return body

@@ -66,7 +66,7 @@ Pendientes: clustering y publicacion.
 | Scrape de leaderboard | `python -m src.page_parse --page data/interim/aa_page_<fecha>.txt --source aa --url <url> --out data/raw/benchmarks_aa_<fecha>.json` |
 | Scrape de Vals | `python -m src.page_parse --page data/raw/vals_raw_<fecha>.json --source vals --out data/raw/benchmarks_vals_<fecha>.json` |
 | Exportar datos para la web | `python -m src.web_export` (escribe `data/web/models.json` y `outputs/web/que-modelo-elijo/data/models.js`) |
-| Articulo a PDF | `python -m src.article_pdf` (escribe `outputs/web/que-modelo-elijo/docs/que-modelo-elijo-para-mi-agente.pdf`; requiere Chrome o Edge) |
+| Articulo a PDF | `python -m src.article_pdf` (escribe `outputs/article/que-modelo-elijo-para-mi-agente.pdf`, que no se publica; requiere Chrome o Edge) |
 | Clustering (pendiente) | `python -m src.cluster --in data/interim/models_scaled.parquet --k auto` |
 | Publicar (pendiente) | `python -m src.publish --in data/processed/llm_features.parquet` |
 
