@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¿Qué modelo elijo para mi agente? · Mauricio Giacometti</title>
+<meta name="description" content="Cómo se ordenan 24 modelos de lenguaje de 16 proveedores según capacidad, velocidad y precio, y cómo elegir uno para tu agente. Datos de Artificial Analysis con corte 2026-10-19.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="qm qm-standalone">
+<a class="skip" href="#principal">Saltar al contenido</a>
+
+<header class="site">
+  <nav aria-label="Ruta"><a href="https://mauriciogiacometti.com">mauriciogiacometti.com</a> <span aria-hidden="true">/</span> proyectos</nav>
+</header>
+
+<main id="principal">
+
+  <!-- NIVEL 1 · Para qué sirve -->
+  <section class="level level-1" aria-labelledby="l1-title">
+    <p class="step">1 · Para qué sirve</p>
+    <h1 id="l1-title">¿Qué modelo elijo para mi agente?</h1>
+    <p class="lede">Si estás armando un agente, tenés que elegir qué modelo de lenguaje lo mueve. Hay decenas y todos dicen ser buenos. Esta página te ayuda a decidir en dos pasos: primero, <strong>entender cómo se ordena la oferta</strong>; después, si querés, <strong>encontrar el modelo que conviene para tu tarea y tu presupuesto</strong>.</p>
+
+    <div class="qm-ideas">
+      <article class="idea">
+        <h2>No hay un “mejor modelo”</h2>
+        <p>El que gana escribiendo código no es necesariamente el que gana leyendo documentos. Depende de la tarea y de cuánto podés pagar.</p>
+      </article>
+      <article class="idea">
+        <h2>La capacidad se paga cara</h2>
+        <p>Entre el tramo más básico y el más capaz, la capacidad de razonamiento se multiplica por 1,9 y el precio de entrada por 10. Duplicar la capacidad cuesta cinco veces más.</p>
+      </article>
+      <article class="idea">
+        <h2>“Rápido” son tres cosas</h2>
+        <p>Cuánto tarda en arrancar, cuántas palabras escribe por segundo y cuánto tarda en terminar una tarea. Un modelo puede escribir rápido y tardar minutos en empezar.</p>
+      </article>
+    </div>
+
+    <p class="source">Base: <span id="meta-line"></span> · <a class="download" href="docs/que-modelo-elijo-para-mi-agente.pdf" download>Descargar el documento técnico (PDF)</a></p>
+    <p class="next"><a href="#l2-title">Mirá el mapa ↓</a></p>
+  </section>
+
+  <!-- NIVEL 2 · El mapa -->
+  <section class="level level-2" aria-labelledby="l2-title">
+    <p class="step">2 · Cómo se ordena la oferta</p>
+    <h2 id="l2-title" class="level-title">El mapa de los 24 modelos</h2>
+    <div class="reading">
+      <p>Cada punto es un modelo. Lo que importa es <strong>hacia dónde está</strong>:</p>
+      <ul>
+        <li><strong>Hacia la derecha</strong> (PC1): más capaz. Resume en un solo eje cuatro pruebas de calidad: razonamiento, código, trabajo agéntico y documentos.</li>
+        <li><strong>Hacia arriba</strong> (PC2): escribe más tokens por segundo una vez que arrancó. <strong>No es el tiempo de respuesta</strong>: un modelo de arriba puede tardar minutos en empezar.</li>
+        <li><strong>Color y forma</strong>: el tramo. <strong>Tamaño</strong>: cuánto cuesta. Más grande, más caro (costo ponderado estimado por millón de tokens).</li>
+      </ul>
+      <p>Pasá el mouse por un punto para ver sus datos; hacé clic para ver su ficha.</p>
+    </div>
+
+    <div class="map-layout">
+      <div class="card map-card">
+        <div class="chart-tools">
+          <label for="map-task">Resaltar los 3 mejores en</label>
+          <select id="map-task"></select>
+        </div>
+        <div id="pca" class="chart"></div>
+        <div id="pca-legend" class="legend" aria-label="Leyenda de tramos"></div>
+        <p class="foot">PC1 y PC2 son componentes principales, no variables: PC1 explica el 70,1 % de la varianza y PC2 el 13,6 %. La latencia quedó fuera del modelo. Fuente: artificialanalysis.ai/models, corte 2026-10-19.</p>
+      </div>
+      <aside class="card ficha" aria-labelledby="ficha-title" aria-live="polite">
+        <h3 id="ficha-title">Ficha del modelo</h3>
+        <div id="ficha" class="ficha-slot"></div>
+      </aside>
+    </div>
+
+    <h3 class="sub-title">Cuatro tramos de una misma escalera</h3>
+    <p class="reading">Agrupamos los modelos en cuatro tramos para poder hablar de ellos. No son cuatro tipos de modelo: son cuatro cortes de una escalera continua donde la capacidad sube, la velocidad baja y el precio acompaña. <strong>La división no está validada</strong>: no se probó si se mantiene al cambiar los datos.</p>
+    <div id="tramos" class="tramos"></div>
+
+    <details class="more">
+      <summary>Por qué “rápido” engaña: las tres velocidades por tramo</summary>
+      <div class="table-wrap">
+        <table class="mini">
+          <caption>Promedios por tramo. Fuente: artificialanalysis.ai/models, corte 2026-10-19.</caption>
+          <thead><tr><th scope="col">Medida</th><th scope="col">C0</th><th scope="col">C1</th><th scope="col">C2</th><th scope="col">C3</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Caudal de salida (t/s)</th><td>508,6</td><td>122,7</td><td>51,2</td><td>110,7</td></tr>
+            <tr><th scope="row">Latencia al primer token (s)</th><td>1,4</td><td>41,2</td><td>114,0</td><td><strong>304,1</strong></td></tr>
+            <tr><th scope="row">Tiempo por tarea (s)</th><td><strong>80</strong></td><td>598</td><td><strong>1.106</strong></td><td>703</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>El tramo de frontera escribe rápido pero arranca tarde, porque razona antes de emitir. El de trabajo pesado arranca antes pero escribe a la mitad del caudal, y termina siendo el más lento de punta a punta.</p>
+    </details>
+  </section>
+
+  <!-- NIVEL 3 · Elegir -->
+  <section class="level level-3" aria-labelledby="l3-title">
+    <p class="step">3 · Elegí tu modelo</p>
+    <h2 id="l3-title" class="level-title">Ahora sí: el mejor para tu caso</h2>
+    <p class="reading">Si ya viste cómo se ordena la oferta, acá podés bajar al detalle: elegir la tarea, poner tus límites de precio, contexto y espera, y ver qué modelos quedan arriba y cuáles dan más por menos.</p>
+
+    <details id="explorer" class="explorer">
+      <summary><span>Abrir el explorador: filtros, ranking, costo y tabla completa</span></summary>
+
+      <ul class="warnings" aria-label="Advertencias sobre los datos">
+        <li><strong>K2 Horizon (†) tiene precio imputado y no se comercializa.</strong> La fuente publica 0,00; se le asignó el mínimo del dataset. Si encabeza un orden por costo, no es una opción contratable.</li>
+        <li><strong>Las tareas no se mezclan.</strong> Cada una es una prueba distinta; no se calcula ningún promedio entre ellas.</li>
+        <li><strong>“Sin dato” no es puntaje bajo.</strong> Significa que la prueba no se corrió para ese modelo.</li>
+      </ul>
+
+      <div class="layout">
+        <aside class="controls" aria-label="Tarea y filtros">
+          <form id="filters">
+            <fieldset>
+              <legend>Tarea</legend>
+              <label for="task">¿Para qué lo vas a usar?</label>
+              <select id="task"></select>
+              <p class="hint" id="task-hint"></p>
+              <label class="check"><input type="checkbox" id="only-data"> Mostrar solo modelos con dato para esta tarea</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Precio de entrada <span class="unit">USD / 1M tokens</span></legend>
+              <label for="price-min">Mínimo: <output id="price-min-out"></output></label>
+              <input type="range" id="price-min" min="0" max="1000" step="1">
+              <label for="price-max">Máximo: <output id="price-max-out"></output></label>
+              <input type="range" id="price-max" min="0" max="1000" step="1">
+            </fieldset>
+
+            <fieldset>
+              <legend>Contexto mínimo</legend>
+              <label for="ctx">Al menos <output id="ctx-out"></output> tokens</label>
+              <input type="range" id="ctx" min="0" step="1">
+            </fieldset>
+
+            <fieldset>
+              <legend>Latencia máxima al primer token</legend>
+              <label for="lat">Hasta <output id="lat-out"></output> <span class="unit">(escala logarítmica)</span></label>
+              <input type="range" id="lat" min="0" max="1000" step="1">
+            </fieldset>
+
+            <fieldset>
+              <legend>Tramo</legend>
+              <div id="cluster-list" class="checklist"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Licencia</legend>
+              <label class="check"><input type="checkbox" id="open-only"> Solo pesos abiertos</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Proveedor</legend>
+              <p class="hint">Pasá el mouse o el foco por un proveedor para resaltar sus modelos.</p>
+              <div class="mini-actions">
+                <button type="button" id="prov-all">Todos</button>
+                <button type="button" id="prov-none">Ninguno</button>
+              </div>
+              <div id="provider-list" class="checklist providers"></div>
+            </fieldset>
+
+            <button type="button" id="reset" class="reset">Restablecer filtros</button>
+          </form>
+        </aside>
+
+        <div class="content">
+          <p id="count" class="count" role="status" aria-live="polite"></p>
+
+          <div class="row two">
+            <section class="card" aria-labelledby="rank-title">
+              <h3 id="rank-title">Ranking</h3>
+              <div id="ranking"></div>
+            </section>
+            <section class="card ficha" aria-labelledby="ficha2-title" aria-live="polite">
+              <h3 id="ficha2-title">Ficha del modelo</h3>
+              <div id="ficha2" class="ficha-slot"></div>
+            </section>
+          </div>
+
+          <section class="card" aria-labelledby="pareto-title">
+            <h3 id="pareto-title">Costo contra capacidad</h3>
+            <p class="sub">Eje X: el puntaje en la tarea elegida. Eje Y: el costo, en escala logarítmica. La línea une la <strong>frontera de Pareto</strong>: los modelos para los que ningún otro es a la vez mejor y más barato.</p>
+            <div class="chart-tools">
+              <label for="cost-metric">Costo en Y</label>
+              <select id="cost-metric">
+                <option value="ponderado">Costo ponderado estimado (USD / 1M tokens) · 60/20/20</option>
+                <option value="precio_in">Precio de entrada (USD / 1M tokens)</option>
+                <option value="precio_out">Precio de salida (USD / 1M tokens)</option>
+              </select>
+              <label class="check"><input type="checkbox" id="color-pareto"> Colorear por frontera</label>
+              <label class="check"><input type="checkbox" id="pareto-k2"> Incluir K2 Horizon en la frontera</label>
+            </div>
+            <div id="pareto" class="chart"></div>
+            <p class="foot" id="pareto-foot"></p>
+          </section>
+
+          <section class="card" aria-labelledby="tabla-title">
+            <h3 id="tabla-title">Todas las métricas</h3>
+            <p class="sub">Hacé clic en un encabezado para ordenar. Los faltantes figuran como “sin dato” y siempre van al final, en cualquier sentido de orden.</p>
+            <p id="sort-warning" class="alert" hidden></p>
+            <div class="table-wrap" tabindex="0" role="region" aria-labelledby="tabla-title">
+              <table id="table" class="data"></table>
+            </div>
+            <p class="foot" id="table-foot"></p>
+          </section>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="level limits-wrap" aria-labelledby="limites-title">
+    <h2 id="limites-title" class="level-title small">Lo que esta página no puede decir</h2>
+    <ul class="limits">
+      <li><strong>No representa a todo el mercado.</strong> Son 24 modelos de 16 proveedores; 7 son de Anthropic y OpenAI y 1 de Google. El tramo de frontera tiene solo dos proveedores, así que Claude va a aparecer arriba con frecuencia.</li>
+      <li><strong>Los tramos no están validados.</strong> Salen de una sola corrida de agrupamiento; no se corrió ningún análisis de estabilidad.</li>
+      <li><strong>Un solo host.</strong> Todo viene de Artificial Analysis. Estos puntajes no se comparan con los de otro leaderboard, aunque la prueba se llame igual.</li>
+      <li><strong>Tareas sin datos.</strong> Seguir instrucciones (IFBench) no tiene ningún dato; multimodal tiene 13 de 24 y análisis de datos 16 de 24.</li>
+      <li><strong>El costo ponderado no es el costo por tarea.</strong> Los pesos son proporciones de tokens; el costo real depende de cuántos tokens consume cada tarea.</li>
+    </ul>
+    <p class="source">Datos: <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a>, corte 2026-10-19. Análisis y herramienta: Mauricio Giacometti.</p>
+    <p class="source">Datos, metodología, decisiones y límites en detalle: <a class="download" href="docs/que-modelo-elijo-para-mi-agente.pdf" download>Descargar el documento técnico (PDF)</a></p>
+  </section>
+</main>
+
+<footer class="site">
+  <p>Datos: <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a>, corte 2026-10-19. Análisis y herramienta: Mauricio Giacometti.</p>
+</footer>
+
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+<script src="vendor/d3.min.js"></script>
+<script src="data/models.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+# Cluster de LLM - dependencias del pipeline
+# Versiones pinneadas (convencion de determinismo en AGENTS.md).
+# Instalado y verificado en Python 3.14.4 (venv del workspace).
+
+requests==2.34.2
+pandas==3.0.6
+numpy==2.5.4
+pyarrow==26.0.0
+
+# Etapas posteriores (imputacion / cluster / figuras). No las usa research/clean/normalize.
+scikit-learn==1.7.2
+matplotlib==3.10.6
+
+# Publicacion (articulo a PDF)
+markdown==3.11.1

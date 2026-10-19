@@ -1,0 +1,90 @@
+canonical_slug,name,provider,family,release_date,n_benchmarks_presentes
+amazon/nova-2-lite-v1,Amazon: Nova 2 Lite,amazon,nova,2025-12-02,0
+amazon/nova-premier-v1,Amazon: Nova Premier 1.0,amazon,nova-premier,2025-10-31,0
+anthropic/claude-fable-5.1-20260831,Anthropic: Claude Fable 5.1,anthropic,claude-fable,2026-09-01,21
+anthropic/claude-haiku-5.5-20261007,Anthropic: Claude Haiku 5.5,anthropic,claude-haiku,2026-10-07,19
+anthropic/claude-opus-5.5-20260921,Anthropic: Claude Opus 5.5,anthropic,claude-opus,2026-09-22,19
+anthropic/claude-sonnet-5.5-20260928,Anthropic: Claude Sonnet 5.5,anthropic,claude-sonnet,2026-09-28,19
+arcee-ai/trinity-large-thinking,Arcee AI: Trinity Large Thinking,arcee-ai,trinity-large,2026-04-01,0
+bytedance-seed/seed-1.6-flash-20250625,ByteDance Seed: Seed 1.6 Flash,bytedance-seed,seed-flash,2025-12-23,0
+bytedance-seed/seed-2-1-turbo-20260810,ByteDance Seed: Seed 2.1 Turbo,bytedance-seed,seed,2026-08-12,0
+bytedance-seed/seed-2.0-code-20260730,ByteDance Seed: Seed-2.0-Code,bytedance-seed,seed-code,2026-08-12,0
+bytedance-seed/seed-2.0-mini-20260224,ByteDance Seed: Seed-2.0-Mini,bytedance-seed,seed-mini,2026-02-26,0
+cohere/command-a-plus-05-2026,Cohere: Command A+,cohere,command-a-plus,2026-09-22,4
+cohere/north-mini-code-20260617,Cohere: North Mini Code (free),cohere,north-mini-code,2026-06-17,0
+deepseek/deepseek-v3.2-20251201,DeepSeek: DeepSeek V3.2,deepseek,deepseek,2025-12-01,2
+deepseek/deepseek-v4-flash-vision-exp-20260821,DeepSeek: DeepSeek V4 Flash Vision Exp,deepseek,deepseek-flash-vision,2026-08-21,0
+deepseek/deepseek-v4.1-flash-20260910,DeepSeek: DeepSeek V4.1 Flash,deepseek,deepseek-flash,2026-09-10,21
+dots-studio/dots-3-note-preview-20260813,Dots Studio: Dots3-Note Preview (free),dots-studio,dots-note,2026-08-14,0
+fireworks/ember-1-20260923,Fireworks: Ember-1,fireworks,ember,2026-09-24,14
+google/gemini-3.1-pro-preview-20260219,Google: Gemini 3.1 Pro Preview,google,gemini-pro,2026-02-19,0
+google/gemini-3.8-flash-20260902,Google: Gemini 3.8 Flash,google,gemini-flash,2026-09-02,21
+google/gemma-4-26b-a4b-it-20260403,Google: Gemma 4 26B A4B ,google,gemma-b-a,2026-04-03,0
+google/gemma-4-31b-it-20260402,Google: Gemma 4 31B,google,gemma-b,2026-04-02,1
+ibm-granite/granite-4.0-h-micro,IBM: Granite 4.0 Micro,ibm-granite,granite-h-micro,2025-10-20,0
+ibm-granite/granite-4.2-8b-20260831,IBM: Granite 4.2 8B,ibm-granite,granite-b,2026-08-31,0
+inception/mercury-2.5-20260908,Inception: Mercury 2.5,inception,mercury,2026-09-08,18
+inclusionai/ling-3.0-flash-vl-20260910,inclusionAI: Ling 3.0 Flash VL,inclusionai,ling-flash-vl,2026-09-10,0
+inclusionai/ling-3.1-flash-20261002,inclusionAI: Ling 3.1 Flash,inclusionai,ling-flash,2026-10-02,0
+liquid/lfm-2.5-2.6b-20260811,LiquidAI: LFM2.5-2.6B (free),liquid,lfm-b,2026-08-11,0
+meituan/longcat-2.0-20260720,Meituan: LongCat 2.0,meituan,longcat,2026-07-20,0
+meta/muse-glimmer-30b-20260810,Meta: Muse Glimmer 30B,meta,muse-glimmer-b,2026-08-09,0
+meta/muse-spark-1.3-20260902,Meta: Muse Spark 1.3,meta,muse-spark,2026-09-02,14
+minimax/minimax-m2-her-20260123,MiniMax: MiniMax M2-her,minimax,minimax-m-her,2026-01-23,0
+minimax/minimax-m3-20260531,MiniMax: MiniMax M3,minimax,minimax-m,2026-05-31,17
+mistralai/devstral-2512,Mistral: Devstral 2 2512,mistral,devstral,2025-12-09,0
+mistralai/ministral-14b-2512,Mistral: Ministral 3 14B 2512,mistral,ministral-b,2025-12-02,0
+mistralai/mistral-large-4-0-20261006,Mistral: Mistral Large 4,mistral,mistral-large,2026-10-06,13
+mistralai/mistral-medium-3.5-20260430,Mistral: Mistral Medium 3.5,mistral,mistral,2026-04-30,11
+mistralai/mistral-small-2603,Mistral: Mistral Small 4,mistral,mistral-small,2026-03-16,1
+mistralai/voxtral-small-24b-2507,Mistral: Voxtral Small 24B 2507,mistral,voxtral-small-b,2025-10-30,0
+moonshotai/kimi-k2.7-code-20260612,MoonshotAI: Kimi K2.7 Code,moonshot,kimi-k-code,2026-06-12,4
+moonshotai/kimi-k3-20260715,MoonshotAI: Kimi K3,moonshot,kimi-k,2026-07-16,19
+nex-agi/nex-n2.5-mini-20260908,Nex AGI: Nex-N2.5-Mini,nex-agi,nex-n-mini,2026-09-08,0
+nex-agi/nex-n2.5-pro-20260907,Nex AGI: Nex-N2.5-Pro,nex-agi,nex-n-pro,2026-09-08,0
+nvidia/nemotron-3-nano-30b-a3b,NVIDIA: Nemotron 3 Nano 30B A3B,nvidia,nemotron-nano-b-a,2025-12-14,0
+nvidia/nemotron-3-nano-omni-30b-a3b-reasoning-20260428,NVIDIA: Nemotron 3 Nano Omni (free),nvidia,nemotron-nano-omni-b-a,2026-04-28,0
+nvidia/nemotron-3-super-120b-a12b-20230311,NVIDIA: Nemotron 3 Super,nvidia,nemotron-super-b-a,2026-03-11,0
+nvidia/nemotron-3-ultra-550b-a55b-20260604,NVIDIA: Nemotron 3 Ultra,nvidia,nemotron-ultra-b-a,2026-06-04,9
+nvidia/nemotron-3.5-lightning-20260807,NVIDIA: Nemotron 3.5 Lightning,nvidia,nemotron-lightning,2026-08-11,11
+openai/gpt-5.1-codex-mini-20251113,OpenAI: GPT-5.1-Codex-Mini,openai,gpt-codex-mini,2025-11-13,0
+openai/gpt-5.3-codex-20260224,OpenAI: GPT-5.3-Codex,openai,gpt-codex,2026-02-24,2
+openai/gpt-5.4-mini-20260317,OpenAI: GPT-5.4 Mini,openai,gpt-mini,2026-03-17,11
+openai/gpt-5.4-nano-20260317,OpenAI: GPT-5.4 Nano,openai,gpt-nano,2026-03-17,11
+openai/gpt-5.6-terra-20260709,OpenAI: GPT-5.6 Terra,openai,gpt-terra,2026-07-09,21
+openai/gpt-6-astra-20260903,OpenAI: GPT-6 Astra,openai,gpt-astra,2026-09-04,18
+openai/gpt-6-luna-20260922,OpenAI: GPT-6 Luna,openai,gpt-luna,2026-09-22,19
+openai/gpt-6.1-sol-20260929,OpenAI: GPT-6.1 Sol,openai,gpt-sol,2026-09-29,19
+openai/gpt-chat-latest-20260505,OpenAI: GPT Chat Latest,openai,gpt,2026-05-05,0
+perceptron/perceptron-mk1.5-20260925,Perceptron: Perceptron Mk1.5,perceptron,perceptron-mk,2026-09-25,0
+perplexity/sonar-pro-search,Perplexity: Sonar Pro Search,perplexity,sonar-pro-search,2025-10-30,0
+poolside/laguna-s-2.1-20260720,Poolside: Laguna S 2.1,poolside,laguna-s,2026-07-21,0
+poolside/laguna-xs-2.1-20260625,Poolside: Laguna XS 2.1,poolside,laguna-xs,2026-07-02,0
+prism-ml/ternary-bonsai-2-27b-20260918,PrismML: Ternary Bonsai 2 27B,prism-ml,ternary-bonsai-b,2026-09-18,0
+qwen/qwen3-coder-next-2025-02-03,Qwen: Qwen3 Coder Next,alibaba,qwen-coder-next,2026-02-04,0
+qwen/qwen3.6-35b-a3b-20260415,Qwen: Qwen3.6 35B A3B,alibaba,qwen-b-a,2026-04-27,0
+qwen/qwen3.7-plus-20260602,Qwen: Qwen3.7 Plus,alibaba,qwen-plus,2026-06-03,9
+qwen/qwen3.8-2.4t-a95b-20260812,Qwen: Qwen3.8 2.4T A95B,alibaba,qwen-t-a-b,2026-08-12,0
+qwen/qwen3.8-27b-20260814,Qwen: Qwen3.8 27B,alibaba,qwen-b,2026-08-14,17
+qwen/qwen3.8-flash-20260826,Qwen: Qwen3.8 Flash,alibaba,qwen-flash,2026-08-26,0
+qwen/qwen3.8-max-20260902,Qwen: Qwen3.8 Max (0902),alibaba,qwen,2026-09-03,20
+qwen/qwen3.8-omni-flash-20260918,Qwen: Qwen3.8 Omni Flash,alibaba,qwen-omni-flash,2026-09-21,0
+rekaai/reka-edge-2603,Reka Edge,rekaai,reka,2026-03-20,0
+sakana/fugu-max-20260911,Sakana: Fugu Max,sakana,fugu,2026-09-11,0
+sakana/namazu-20260811,Sakana: Sakana Namazu,sakana,namazu,2026-08-11,0
+stepfun/step-3.7-flash-20260528,StepFun: Step 3.7 Flash,stepfun,step-flash,2026-05-28,0
+stepfun/step-5-preview-20261008,StepFun: Step 5 Preview,stepfun,step,2026-10-08,14
+tencent/hy4-preview-20260827,Tencent: Hy4 preview,tencent,hy,2026-08-28,19
+thinkingmachines/inkling-20260715,Thinking Machines: Inkling,thinkingmachines,inkling,2026-07-17,20
+thinkingmachines/inkling-small-20260730,Thinking Machines: Inkling Small,thinkingmachines,inkling-small,2026-07-30,19
+upstage/solar-mini4-20260922,Upstage: Solar Mini 4,upstage,solar-mini,2026-09-23,0
+upstage/solar-pro4-20260810,Upstage: Solar Pro 4,upstage,solar-pro,2026-08-10,0
+writer/palmyra-x5-20250428,Writer: Palmyra X5,writer,palmyra-x,2026-01-21,0
+x-ai/grok-4.20-multi-agent-20260309,SpaceXAI: Grok 4.20 Multi-Agent,spacexai,grok-multi-agent,2026-03-31,11
+x-ai/grok-4.7-20260916,SpaceXAI: Grok 4.7,spacexai,grok,2026-09-21,20
+x-ai/grok-build-0.1-20260520,SpaceXAI: Grok Build 0.1,spacexai,grok-build,2026-05-20,1
+xiaomi/mimo-v2.5-20260422,Xiaomi: MiMo-V2.5,xiaomi,mimo,2026-04-22,12
+xiaomi/mimo-v2.6-flash-20260921,Xiaomi: MiMo-V2.6-Flash,xiaomi,mimo-flash,2026-09-21,19
+z-ai/glm-5.3-20260816,Z.ai: GLM 5.3,z-ai,glm,2026-08-18,20
+z-ai/glm-5.3-flash-20260826,Z.ai: GLM 5.3 Flash,z-ai,glm-flash,2026-08-26,18
+z-ai/glm-5.3-flashx-20260918,Z.ai: GLM 5.3 FlashX,z-ai,glm-flashx,2026-09-18,0

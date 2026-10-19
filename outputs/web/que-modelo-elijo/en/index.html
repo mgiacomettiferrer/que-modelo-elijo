@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which model should my agent use? · Mauricio Giacometti</title>
+<meta name="description" content="How 24 language models from 16 providers line up by capability, speed and price, and how to pick one for your agent. Data from Artificial Analysis, cutoff 2026-10-19.">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body class="qm qm-standalone">
+<a class="skip" href="#principal">Skip to content</a>
+
+<header class="site">
+  <nav aria-label="Breadcrumb"><a href="https://mauriciogiacometti.com/en/">mauriciogiacometti.com</a> <span aria-hidden="true">/</span> projects</nav>
+</header>
+
+<main id="principal">
+
+  <!-- LEVEL 1 · What it is for -->
+  <section class="level level-1" aria-labelledby="l1-title">
+    <p class="step">1 · What it is for</p>
+    <h1 id="l1-title">Which model should my agent use?</h1>
+    <p class="lede">If you are building an agent, you have to choose the language model that runs it. There are dozens, and they all claim to be good. This page helps you decide in two steps: first, <strong>understand how the market lines up</strong>; then, if you want, <strong>find the model that fits your task and your budget</strong>.</p>
+
+    <div class="qm-ideas">
+      <article class="idea">
+        <h2>There is no “best model”</h2>
+        <p>The one that wins at writing code is not necessarily the one that wins at reading documents. It depends on the task and on how much you can pay.</p>
+      </article>
+      <article class="idea">
+        <h2>Capability is expensive</h2>
+        <p>Between the most basic tier and the most capable one, reasoning capability grows 1.9 times and the input price grows 10 times. Doubling capability costs five times more.</p>
+      </article>
+      <article class="idea">
+        <h2>“Fast” means three things</h2>
+        <p>How long it takes to start, how many tokens it writes per second, and how long it takes to finish a task. A model can write fast and still take minutes to begin.</p>
+      </article>
+    </div>
+
+    <p class="source">Basis: <span id="meta-line"></span> · <a class="download" href="../docs/que-modelo-elijo-para-mi-agente.pdf" download>Download the technical paper (PDF, in Spanish)</a></p>
+    <p class="next"><a href="#l2-title">See the map ↓</a></p>
+  </section>
+
+  <!-- LEVEL 2 · The map -->
+  <section class="level level-2" aria-labelledby="l2-title">
+    <p class="step">2 · How the market lines up</p>
+    <h2 id="l2-title" class="level-title">The map of the 24 models</h2>
+    <div class="reading">
+      <p>Each point is a model. What matters is <strong>where it sits</strong>:</p>
+      <ul>
+        <li><strong>To the right</strong> (PC1): more capable. One axis summarizes four quality tests: reasoning, coding, agentic work and documents.</li>
+        <li><strong>Up</strong> (PC2): writes more tokens per second once it has started. <strong>It is not response time</strong>: a model near the top can take minutes to begin.</li>
+        <li><strong>Color and shape</strong>: the tier. <strong>Size</strong>: how much it costs. Bigger means more expensive (estimated weighted cost per million tokens).</li>
+      </ul>
+      <p>Hover over a point to see its data; click it to see its profile.</p>
+    </div>
+
+    <div class="map-layout">
+      <div class="card map-card">
+        <div class="chart-tools">
+          <label for="map-task">Highlight the top 3 on</label>
+          <select id="map-task"></select>
+        </div>
+        <div id="pca" class="chart"></div>
+        <div id="pca-legend" class="legend" aria-label="Tier legend"></div>
+        <p class="foot">PC1 and PC2 are principal components, not variables: PC1 explains 70.1% of the variance and PC2 13.6%. Latency was left out of the model. Source: artificialanalysis.ai/models, cutoff 2026-10-19.</p>
+      </div>
+      <aside class="card ficha" aria-labelledby="ficha-title" aria-live="polite">
+        <h3 id="ficha-title">Model profile</h3>
+        <div id="ficha" class="ficha-slot"></div>
+      </aside>
+    </div>
+
+    <h3 class="sub-title">Four tiers of the same ladder</h3>
+    <p class="reading">We group the models into four tiers so we can talk about them. They are not four kinds of model: they are four cuts of a continuous ladder where capability rises, speed falls and price follows. <strong>The split is not validated</strong>: nobody tested whether it holds when the data changes.</p>
+    <div id="tramos" class="tramos"></div>
+
+    <details class="more">
+      <summary>Why “fast” is misleading: the three speeds by tier</summary>
+      <div class="table-wrap">
+        <table class="mini">
+          <caption>Averages by tier. Source: artificialanalysis.ai/models, cutoff 2026-10-19.</caption>
+          <thead><tr><th scope="col">Measure</th><th scope="col">C0</th><th scope="col">C1</th><th scope="col">C2</th><th scope="col">C3</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Output throughput (t/s)</th><td>508.6</td><td>122.7</td><td>51.2</td><td>110.7</td></tr>
+            <tr><th scope="row">Latency to first token (s)</th><td>1.4</td><td>41.2</td><td>114.0</td><td><strong>304.1</strong></td></tr>
+            <tr><th scope="row">Time per task (s)</th><td><strong>80</strong></td><td>598</td><td><strong>1,106</strong></td><td>703</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The frontier tier writes fast but starts late, because it reasons before emitting. The heavy-lifting tier starts earlier but writes at half the throughput, and ends up the slowest end to end.</p>
+    </details>
+  </section>
+
+  <!-- LEVEL 3 · Choose -->
+  <section class="level level-3" aria-labelledby="l3-title">
+    <p class="step">3 · Pick your model</p>
+    <h2 id="l3-title" class="level-title">Now: the best one for your case</h2>
+    <p class="reading">If you have seen how the market lines up, here you can go into detail: choose the task, set your limits on price, context and waiting time, and see which models stay on top and which give more for less.</p>
+
+    <details id="explorer" class="explorer">
+      <summary><span>Open the explorer: filters, ranking, cost and full table</span></summary>
+
+      <ul class="warnings" aria-label="Data warnings">
+        <li><strong>K2 Horizon (†) has an imputed price and is not sold commercially.</strong> The source publishes 0.00; it was assigned the dataset minimum. If it tops a cost ranking, it is not an option you can buy.</li>
+        <li><strong>Tasks are not mixed.</strong> Each one is a different test; no average across them is computed.</li>
+        <li><strong>“No data” is not a low score.</strong> It means the test was not run for that model.</li>
+      </ul>
+
+      <div class="layout">
+        <aside class="controls" aria-label="Task and filters">
+          <form id="filters">
+            <fieldset>
+              <legend>Task</legend>
+              <label for="task">What will you use it for?</label>
+              <select id="task"></select>
+              <p class="hint" id="task-hint"></p>
+              <label class="check"><input type="checkbox" id="only-data"> Show only models with data for this task</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Input price <span class="unit">USD / 1M tokens</span></legend>
+              <label for="price-min">Minimum: <output id="price-min-out"></output></label>
+              <input type="range" id="price-min" min="0" max="1000" step="1">
+              <label for="price-max">Maximum: <output id="price-max-out"></output></label>
+              <input type="range" id="price-max" min="0" max="1000" step="1">
+            </fieldset>
+
+            <fieldset>
+              <legend>Minimum context</legend>
+              <label for="ctx">At least <output id="ctx-out"></output> tokens</label>
+              <input type="range" id="ctx" min="0" step="1">
+            </fieldset>
+
+            <fieldset>
+              <legend>Maximum latency to first token</legend>
+              <label for="lat">Up to <output id="lat-out"></output> <span class="unit">(log scale)</span></label>
+              <input type="range" id="lat" min="0" max="1000" step="1">
+            </fieldset>
+
+            <fieldset>
+              <legend>Tier</legend>
+              <div id="cluster-list" class="checklist"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend>License</legend>
+              <label class="check"><input type="checkbox" id="open-only"> Open weights only</label>
+            </fieldset>
+
+            <fieldset>
+              <legend>Provider</legend>
+              <p class="hint">Hover or focus a provider to highlight its models.</p>
+              <div class="mini-actions">
+                <button type="button" id="prov-all">All</button>
+                <button type="button" id="prov-none">None</button>
+              </div>
+              <div id="provider-list" class="checklist providers"></div>
+            </fieldset>
+
+            <button type="button" id="reset" class="reset">Reset filters</button>
+          </form>
+        </aside>
+
+        <div class="content">
+          <p id="count" class="count" role="status" aria-live="polite"></p>
+
+          <div class="row two">
+            <section class="card" aria-labelledby="rank-title">
+              <h3 id="rank-title">Ranking</h3>
+              <div id="ranking"></div>
+            </section>
+            <section class="card ficha" aria-labelledby="ficha2-title" aria-live="polite">
+              <h3 id="ficha2-title">Model profile</h3>
+              <div id="ficha2" class="ficha-slot"></div>
+            </section>
+          </div>
+
+          <section class="card" aria-labelledby="pareto-title">
+            <h3 id="pareto-title">Cost versus capability</h3>
+            <p class="sub">X axis: the score on the selected task. Y axis: cost, on a log scale. The line joins the <strong>Pareto frontier</strong>: the models for which no other model is both better and cheaper.</p>
+            <div class="chart-tools">
+              <label for="cost-metric">Cost on Y</label>
+              <select id="cost-metric">
+                <option value="ponderado">Estimated weighted cost (USD / 1M tokens) · 60/20/20</option>
+                <option value="precio_in">Input price (USD / 1M tokens)</option>
+                <option value="precio_out">Output price (USD / 1M tokens)</option>
+              </select>
+              <label class="check"><input type="checkbox" id="color-pareto"> Color by frontier</label>
+              <label class="check"><input type="checkbox" id="pareto-k2"> Include K2 Horizon in the frontier</label>
+            </div>
+            <div id="pareto" class="chart"></div>
+            <p class="foot" id="pareto-foot"></p>
+          </section>
+
+          <section class="card" aria-labelledby="tabla-title">
+            <h3 id="tabla-title">All metrics</h3>
+            <p class="sub">Click a header to sort. Missing values are shown as “no data” and always go last, in either sort direction.</p>
+            <p id="sort-warning" class="alert" hidden></p>
+            <div class="table-wrap" tabindex="0" role="region" aria-labelledby="tabla-title">
+              <table id="table" class="data"></table>
+            </div>
+            <p class="foot" id="table-foot"></p>
+          </section>
+        </div>
+      </div>
+    </details>
+  </section>
+
+  <section class="level limits-wrap" aria-labelledby="limites-title">
+    <h2 id="limites-title" class="level-title small">What this page cannot tell you</h2>
+    <ul class="limits">
+      <li><strong>It does not represent the whole market.</strong> These are 24 models from 16 providers; 7 are from Anthropic and OpenAI and 1 from Google. The frontier tier has only two providers, so Claude will show up at the top often.</li>
+      <li><strong>The tiers are not validated.</strong> They come from a single clustering run; no stability analysis was performed.</li>
+      <li><strong>A single host.</strong> Everything comes from Artificial Analysis. These scores are not comparable with another leaderboard's, even when the test has the same name.</li>
+      <li><strong>Tasks without data.</strong> Instruction following (IFBench) has no data at all; multimodal has 13 of 24 and data analysis 16 of 24.</li>
+      <li><strong>The weighted cost is not the cost per task.</strong> The weights are shares of tokens; the real cost depends on how many tokens each task consumes.</li>
+    </ul>
+    <p class="source">Data: <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a>, cutoff 2026-10-19. Analysis and tool: Mauricio Giacometti.</p>
+    <p class="source">Data, methodology, decisions and limits in detail: <a class="download" href="../docs/que-modelo-elijo-para-mi-agente.pdf" download>Download the technical paper (PDF, in Spanish)</a></p>
+  </section>
+</main>
+
+<footer class="site">
+  <p>Data: <a href="https://artificialanalysis.ai/models">artificialanalysis.ai/models</a>, cutoff 2026-10-19. Analysis and tool: Mauricio Giacometti.</p>
+</footer>
+
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+
+<script src="../vendor/d3.min.js"></script>
+<script src="../data/models.js"></script>
+<script src="../app.js"></script>
+</body>
+</html>

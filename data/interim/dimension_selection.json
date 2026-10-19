@@ -1,0 +1,85 @@
+{
+ "criterio": "benchmark con menos nulos por dimension, medido sobre el universo",
+ "n_rows": 89,
+ "seleccion": {
+  "general": {
+   "benchmark": "arena_elo",
+   "n_valid": 0,
+   "pct_null": 100.0,
+   "candidates": 1,
+   "source": "arena.ai"
+  },
+  "reasoning": {
+   "benchmark": "proof_bench_pct",
+   "n_valid": 29,
+   "pct_null": 67.42,
+   "candidates": 5,
+   "source": "vals.ai"
+  },
+  "coding": {
+   "benchmark": "vibe_code_bench_pct",
+   "n_valid": 39,
+   "pct_null": 56.18,
+   "candidates": 6,
+   "source": "vals.ai"
+  },
+  "agentic": {
+   "benchmark": "terminal_bench_4_0_pct",
+   "n_valid": 26,
+   "pct_null": 70.79,
+   "candidates": 6,
+   "source": "vals.ai"
+  },
+  "professional": {
+   "benchmark": "finance_agent_v2_pct",
+   "n_valid": 35,
+   "pct_null": 60.67,
+   "candidates": 10,
+   "source": "vals.ai"
+  },
+  "data": {
+   "benchmark": "excel_modeling_pct",
+   "n_valid": 34,
+   "pct_null": 61.8,
+   "candidates": 3,
+   "source": "vals.ai"
+  },
+  "browser": {
+   "benchmark": "arena_agent_score",
+   "n_valid": 0,
+   "pct_null": 100.0,
+   "candidates": 2,
+   "source": "arena.ai"
+  },
+  "multimodal": {
+   "benchmark": "arena_vision_elo",
+   "n_valid": 0,
+   "pct_null": 100.0,
+   "candidates": 2,
+   "source": "arena.ai"
+  },
+  "long_context": {
+   "benchmark": "aa_lcr_v1_1_pct",
+   "n_valid": 0,
+   "pct_null": 100.0,
+   "candidates": 2,
+   "source": "artificialanalysis.ai"
+  },
+  "instruction": {
+   "benchmark": "ifbench_pct",
+   "n_valid": 0,
+   "pct_null": 100.0,
+   "candidates": 1,
+   "source": "artificialanalysis.ai"
+  }
+ },
+ "features": [
+  "speed_tok_s",
+  "latency_ttft_s",
+  "excel_modeling_pct",
+  "finance_agent_v2_pct",
+  "proof_bench_pct",
+  "terminal_bench_4_0_pct",
+  "vibe_code_bench_pct"
+ ]
+}

@@ -1,0 +1,14 @@
+# Entorno y herramientas locales
+.venv/
+__pycache__/
+*.pyc
+.opencode/
+.playwright-mcp/
+node_modules/
+
+# Datos crudos de terceros: no se redistribuyen (Artificial Analysis, OpenRouter, Vals).
+# Se regeneran con src/research.py y src/aa_dataset.py; ver README.
+data/raw/
+# Captura de página del leaderboard: es contenido crudo de la fuente.
+data/interim/aa_page_*.txt
+data/interim/vals_raw_*.json
